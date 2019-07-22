@@ -33,3 +33,21 @@ cacheSolve <- function(x, ...) {
         x$setinverse(s)
         s
 }
+
+## Below are matrices for testing the R functions makeCacheMatrix and cacheSolve
+## The solve function computes the inverse of a square matrix
+## The R functions work correctly since the results of cacheSolve = solve
+
+A <-matrix(c(4,7,2,6),nrow=2,ncol=2)
+Matrix_A <- makeCacheMatrix(A)
+cacheSolve(Matrix_A)
+solve(A)
+
+## inverse of A is matrix(c(0.6,-0.2,-0.7,0.4))
+
+B <-matrix(c(3,5,4,6),nrow=2,ncol=2)
+Matrix_B <- makeCacheMatrix(B)
+cacheSolve(Matrix_B)
+solve(B)
+
+## inverse of B is matrix(c(-3.0,2.0,2.5,-1.5))
